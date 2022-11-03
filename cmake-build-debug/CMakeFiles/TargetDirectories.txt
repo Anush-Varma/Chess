@@ -1,0 +1,3 @@
+D:/SummerProjects/C++/Chess 2.0/cmake-build-debug/CMakeFiles/Chess_2_0.dir
+D:/SummerProjects/C++/Chess 2.0/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/SummerProjects/C++/Chess 2.0/cmake-build-debug/CMakeFiles/rebuild_cache.dir

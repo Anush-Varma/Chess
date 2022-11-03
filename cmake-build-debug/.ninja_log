@@ -1,0 +1,14 @@
+# ninja log v5
+6	1093	6871124463774294	CMakeFiles/Chess_2_0.dir/Board.cpp.obj	b8e24e6ddd5fad54
+18	270	6856533218318477	CMakeFiles/Chess_2_0.dir/Bishop.cpp.obj	98f5e70248c5843b
+1093	1528	6871124467814485	Chess_2_0.exe	c617124c7200d071
+28	696	6852005365076024	CMakeFiles/Chess_2_0.dir/main.cpp.obj	1270feecb5410ce1
+5	551	6853089174562700	CMakeFiles/Chess_2_0.dir/Game.cpp.obj	273826a16431ae32
+18	344	6852005361406033	CMakeFiles/Chess_2_0.dir/ChessPieces.cpp.obj	1301986d8e4ac8f2
+51	371	6852005361706040	CMakeFiles/Chess_2_0.dir/Empty.cpp.obj	34d8437cfd4d7ab6
+5	413	6850438782969171	CMakeFiles/Chess_2_0.dir/Player.cpp.obj	8945b088802ce9e7
+69	679	6854865667563980	CMakeFiles/Chess_2_0.dir/Rook.cpp.obj	a9e1f4f926833d66
+26	532	6852087530808782	CMakeFiles/Chess_2_0.dir/Pawn.cpp.obj	1e6c734faf81f17
+82	920	6862767028665926	CMakeFiles/Chess_2_0.dir/Queen.cpp.obj	f0c63873acdf0ad7
+27	419	6871124456993338	CMakeFiles/Chess_2_0.dir/Knight.cpp.obj	96337807d89faa93
+114	698	6871101612895184	CMakeFiles/Chess_2_0.dir/King.cpp.obj	4873152007d230f2

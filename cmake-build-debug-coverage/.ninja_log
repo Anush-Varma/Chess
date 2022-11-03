@@ -1,0 +1,9 @@
+# ninja log v5
+21	168	6845990556049223	CMakeFiles/Chess_2_0.dir/ChessPieces.cpp.obj	8fa40680aad3bfad
+54	194	6845990556319221	CMakeFiles/Chess_2_0.dir/Empty.cpp.obj	5bc5c09e61396d3c
+66	213	6845990556499256	CMakeFiles/Chess_2_0.dir/Rook.cpp.obj	e21ad32cdc42c289
+5	383	6845998162276808	CMakeFiles/Chess_2_0.dir/Player.cpp.obj	62226378f9f7ecb7
+4	502	6846013526697850	CMakeFiles/Chess_2_0.dir/main.cpp.obj	b2c3ca45a6f53e6f
+4	460	6846014620526254	CMakeFiles/Chess_2_0.dir/Game.cpp.obj	a1b17e4dd56db657
+12	810	6845990562475015	CMakeFiles/Chess_2_0.dir/Board.cpp.obj	4408a21ec3ff0ca
+460	693	6846014622721737	Chess_2_0.exe	623fd4a5780c9740
