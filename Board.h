@@ -8,18 +8,20 @@
 #include <memory>
 #include "vector"
 #include "iostream"
-using namespace std;
 #include "ChessPieces.h"
 
 class Board {
+    enum isCheck {check, checkMate, notInCheck};
 public:
-    vector<vector<ChessPieces*>> board;
+    std::vector<std::vector<ChessPieces*>> board;
     Board();
     ~Board();
     void outputBoard();
 
 private:
     void setupBoard();
+    void gameEnd();
+    isCheck isKingInCheck();
 
 };
 

@@ -34,24 +34,41 @@ void Game::gameStart(Board &board, Player p1) {
             std::cout << "Invalid Input, Enter either 1 or 2";
         }
     }
+
+
+
+
+    //note# Change code to remove duplicate for p1 turn and p2 turn and generalise it
+
+
     correctInput = true;
     std::cout << std::endl;
+    bool moveValid = true;
+    while(moveValid) {
     board.outputBoard();
     p1.startTurn();
+        if (board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(p1.currentPos()[1])]->move(
+                p1.convertCoords(p1.newPos()[1]), p1.convertCoords(p1.newPos()[0]),
+                board.board[p1.convertCoords(p1.newPos()[1])][p1.convertCoords(p1.newPos()[0])]->getColour(),
+                board.board)) //Checks if player1 move is valid
+        {
 
-    if (board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(p1.currentPos()[1])]->move(
-            p1.convertCoords(p1.newPos()[1]), p1.convertCoords(p1.newPos()[0]),
-            board.board[p1.convertCoords(p1.newPos()[1])][p1.convertCoords(p1.newPos()[0])]->getColour(),
-            board.board))
-    {
+            board.board[p1.convertCoords(p1.newPos()[0])][p1.convertCoords(
+                    p1.newPos()[1])] = board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(
+                    p1.currentPos()[1])];
+            board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(
+                    p1.currentPos()[1])] = (ChessPieces *) (new Empty());
 
-        board.board[p1.convertCoords(p1.newPos()[0])][p1.convertCoords(
-                p1.newPos()[1])] = board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(
-                p1.currentPos()[1])];
-        board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(
-                p1.currentPos()[1])] = (ChessPieces *) (new Empty());
+            moveValid = false;
 
+        } else {
+            moveValid = true;
+        }
     }
     board.outputBoard();
+
+
+
+
 }
 

@@ -101,3 +101,8 @@ void Board::setupBoard()
         }
     }
 }
+
+void Board::gameEnd()
+{
+
+}
