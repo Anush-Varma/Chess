@@ -12,8 +12,9 @@ class Game {
 public:
     Game();
 private:
-    void gameStart(Board &board, Player p1);
-
+    void gameStart(Board &board, Player p1, Player p2);
+    void endGameCheck(Board &board, Player p1, Player p2);
+    void checkMove(Board &board, Player p1);
 
 };
 

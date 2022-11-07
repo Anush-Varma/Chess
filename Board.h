@@ -11,7 +11,7 @@
 #include "ChessPieces.h"
 
 class Board {
-    enum isCheck {check, checkMate, notInCheck};
+
 public:
     std::vector<std::vector<ChessPieces*>> board;
     Board();
@@ -20,9 +20,6 @@ public:
 
 private:
     void setupBoard();
-    void gameEnd();
-    isCheck isKingInCheck();
-
 };
 
 

@@ -11,10 +11,11 @@
 Game::Game() {
     Board board;
     Player p1;
-    gameStart(board, p1);
+    Player p2;
+    gameStart(board, p1, p2);
 }
 
-void Game::gameStart(Board &board, Player p1) {
+void Game::gameStart(Board &board, Player p1, Player p2) {
     std::cout << "Welcome to Chess Game" << std::endl;
     bool correctInput = true;
 
@@ -34,30 +35,35 @@ void Game::gameStart(Board &board, Player p1) {
             std::cout << "Invalid Input, Enter either 1 or 2";
         }
     }
-
-
-
-
-    //note# Change code to remove duplicate for p1 turn and p2 turn and generalise it
-
-
     correctInput = true;
     std::cout << std::endl;
+    checkMove(board, p1);
+    checkMove(board, p2);
+
+
+}
+
+void Game::endGameCheck(Board &board, Player p1, Player p2) {
+
+}
+
+
+void Game::checkMove(Board &board, Player p) {
     bool moveValid = true;
     while(moveValid) {
-    board.outputBoard();
-    p1.startTurn();
-        if (board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(p1.currentPos()[1])]->move(
-                p1.convertCoords(p1.newPos()[1]), p1.convertCoords(p1.newPos()[0]),
-                board.board[p1.convertCoords(p1.newPos()[1])][p1.convertCoords(p1.newPos()[0])]->getColour(),
+        board.outputBoard();
+        p.startTurn();
+        if (board.board[p.convertCoords(p.currentPos()[0])][p.convertCoords(p.currentPos()[1])]->move(
+                p.convertCoords(p.newPos()[1]), p.convertCoords(p.newPos()[0]),
+                board.board[p.convertCoords(p.newPos()[1])][p.convertCoords(p.newPos()[0])]->getColour(),
                 board.board)) //Checks if player1 move is valid
         {
 
-            board.board[p1.convertCoords(p1.newPos()[0])][p1.convertCoords(
-                    p1.newPos()[1])] = board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(
-                    p1.currentPos()[1])];
-            board.board[p1.convertCoords(p1.currentPos()[0])][p1.convertCoords(
-                    p1.currentPos()[1])] = (ChessPieces *) (new Empty());
+            board.board[p.convertCoords(p.newPos()[0])][p.convertCoords(
+                    p.newPos()[1])] = board.board[p.convertCoords(p.currentPos()[0])][p.convertCoords(
+                    p.currentPos()[1])];
+            board.board[p.convertCoords(p.currentPos()[0])][p.convertCoords(
+                    p.currentPos()[1])] = (ChessPieces *) (new Empty());
 
             moveValid = false;
 
@@ -66,9 +72,4 @@ void Game::gameStart(Board &board, Player p1) {
         }
     }
     board.outputBoard();
-
-
-
-
 }
-

@@ -4,6 +4,8 @@
 
 #include "Knight.h"
 
+
+
 Knight::Knight(char colour, int &x, int &y) {
     this->setIcon('K');
     this->setColour(colour);
