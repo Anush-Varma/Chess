@@ -38,12 +38,20 @@ void Game::gameStart(Board &board, Player p1, Player p2) {
     correctInput = true;
     std::cout << std::endl;
     checkMove(board, p1);
+    endGameCheck(board, p1, 'W');
     checkMove(board, p2);
-
+    endGameCheck(board, p2, 'B');
 
 }
 
-void Game::endGameCheck(Board &board, Player p1, Player p2) {
+void Game::endGameCheck(Board &board, Player p, char colour) {
+    int kingXPos = board.getPieceColPos('K', colour);
+    int kingYPos = board.getPieceRowPos('K', colour);
+    for (int i = kingYPos; i < board.boardSize; ++i) {
+        for (int j = kingXPos; j < board.boardSize; ++j) {
+
+        }
+    }
 
 }
 
@@ -56,7 +64,7 @@ void Game::checkMove(Board &board, Player p) {
         if (board.board[p.convertCoords(p.currentPos()[0])][p.convertCoords(p.currentPos()[1])]->move(
                 p.convertCoords(p.newPos()[1]), p.convertCoords(p.newPos()[0]),
                 board.board[p.convertCoords(p.newPos()[1])][p.convertCoords(p.newPos()[0])]->getColour(),
-                board.board)) //Checks if player1 move is valid
+                board.board)) //Checks if player p move is valid
         {
 
             board.board[p.convertCoords(p.newPos()[0])][p.convertCoords(
@@ -66,6 +74,7 @@ void Game::checkMove(Board &board, Player p) {
                     p.currentPos()[1])] = (ChessPieces *) (new Empty());
 
             moveValid = false;
+            // switches piece with valid location
 
         } else {
             moveValid = true;

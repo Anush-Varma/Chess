@@ -14,9 +14,12 @@ class Board {
 
 public:
     std::vector<std::vector<ChessPieces*>> board;
+    int boardSize = 8;
     Board();
     ~Board();
     void outputBoard();
+    int getPieceColPos(char icon, char colour);
+    int getPieceRowPos(char icon, char colour);
 
 private:
     void setupBoard();

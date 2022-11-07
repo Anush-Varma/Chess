@@ -12,9 +12,9 @@
 #include "Knight.h"
 
 Board::Board() {
-    for (int col = 0; col < 8; col++) {
+    for (int col = 0; col < boardSize; col++) {
         vector<ChessPieces*> v;
-        for (int row = 0; row < 8; row++)
+        for (int row = 0; row < boardSize; row++)
             v.push_back((ChessPieces*)(new Empty(row, col)));
         board.push_back(v);
     }
@@ -30,9 +30,9 @@ Board::~Board() {
 void Board::outputBoard() {
     cout << "        A      B      C      D      E      F      G      H" << endl;
     int x = 8;
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < boardSize; ++i) {
 
-        for (int j = 0; j < 8; ++j) {
+        for (int j = 0; j < boardSize; ++j) {
             if (j == 0)
             {
                 std::cout << "| " << x-- << " |" << "| " << board[j][i]->getColour() << " " << board[j][i]->getIcon() << " |";
@@ -46,7 +46,7 @@ void Board::outputBoard() {
 
 void Board::setupBoard()
 {
-    for (int col = 0; col < 8; ++col) {
+    for (int col = 0; col < boardSize; ++col) {
         for (int row = 0; row < 8; ++row) {
             //set white pieces in correct position
             if (((col==0) && (row == 0)) || ((col == 7) && (row == 0)))//black rook
@@ -102,7 +102,25 @@ void Board::setupBoard()
     }
 }
 
-void Board::gameEnd()
-{
 
+int Board::getPieceColPos(char icon, char colour) {
+    for (int i = 0; i < boardSize; ++i) {
+        for (int j = 0; j < boardSize; ++j) {
+            if (board[i][j]->getIcon() == icon && board[i][j]->getColour() == colour)
+            {
+                return board[i][j]->getCol();
+            }
+        }
+    }
+}
+
+int Board::getPieceRowPos(char icon, char colour) {
+    for (int i = 0; i < boardSize; ++i) {
+        for (int j = 0; j < boardSize; ++j) {
+            if (board[i][j]->getIcon() == icon && board[i][j]->getColour() == colour)
+            {
+                return board[i][j]->getRow();
+            }
+        }
+    }
 }
