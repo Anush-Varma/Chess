@@ -14,6 +14,12 @@ public:
 private:
     void gameStart(Board &board, Player p1, Player p2);
     void endGameCheck(Board &board, Player p, char colour);
+    bool isKingAttackedFromDiagonal (Board &board, Player p, char colour);
+    bool isKingAttackedFromHorOrVert(Board &board, Player p, char colour);
+    bool isKingAttackedFromKnight(Board &board, Player p, char colour);
+    bool isKingAbleToMoveUnderCheck(Board &board, Player p, char colour);
+    bool blockingPiecesExist(Board &board, Player p, char colour);
+    bool canPieceBeCaptured(Board &board, Player p, char colour);
     void checkMove(Board &board, Player p1);
 
 };

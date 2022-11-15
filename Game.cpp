@@ -47,13 +47,30 @@ void Game::gameStart(Board &board, Player p1, Player p2) {
 void Game::endGameCheck(Board &board, Player p, char colour) {
     int kingXPos = board.getPieceColPos('K', colour);
     int kingYPos = board.getPieceRowPos('K', colour);
-    for (int i = kingYPos; i < board.boardSize; ++i) {
-        for (int j = kingXPos; j < board.boardSize; ++j) {
-
-        }
+    if (isKingAttackedFromKnight(board, p, colour) || isKingAttackedFromDiagonal(board, p, colour) || (isKingAttackedFromHorOrVert( board, p, colour)))
+    {
+        cout << "Player is under Check" << endl;
     }
-
 }
+
+bool Game::isKingAttackedFromDiagonal(Board &board, Player p, char colour) {
+    return true;
+}
+
+bool Game::isKingAttackedFromHorOrVert(Board &board, Player p, char colour) {
+    return true;
+}
+
+bool Game::isKingAttackedFromKnight(Board &board, Player p, char colour) {
+    return true;
+}
+
+
+
+
+
+
+
 
 
 void Game::checkMove(Board &board, Player p) {
