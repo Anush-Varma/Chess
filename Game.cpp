@@ -53,6 +53,8 @@ void Game::endGameCheck(Board &board, Player p, char colour) {
     }
 }
 
+
+//test comment
 bool Game::isKingAttackedFromDiagonal(Board &board, Player p, char colour) {
     return true;
 }
